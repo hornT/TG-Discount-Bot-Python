@@ -10,19 +10,14 @@ def main():
         for product in products:
             name        = product['Name']
             max_price   = product['MaxPrice']
-            # print(product['Name'])
-            # print()
 
-            for product_shop in product['Shops']:
-                shop_name   = product_shop['Name']
-                search      = product_shop['SearchValue']
-
+            for shop_name, search in product['Shops'].items():
                 try:
                     price = shop.get_product(shop_name, search)
+                    # print(f'Search {name} in {shop_name} with max {max_price}. actual: {price}')
                     if price is None or price > max_price:
                         break
-                    print(name, shop_name, price)
-                    print()
+                    print(f'{name} in {shop_name} by {price} < {max_price}')
 
                 except ValueError:
                     print('Fail')
