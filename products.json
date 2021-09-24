@@ -1,0 +1,12 @@
+[
+    {
+        "Name": "Pechenki",
+        "MaxPrice": 90,
+        "Shops":[
+            {
+                "Name": "Metro",
+                "SearchValue": "qwe"
+            }
+        ]
+    }
+]
