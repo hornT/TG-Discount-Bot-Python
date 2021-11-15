@@ -1,5 +1,6 @@
 import requests
 
+
 def get_product(url, search):
     try:
         response = requests.get(url + search)

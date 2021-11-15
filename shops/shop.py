@@ -1,14 +1,17 @@
 import json
 
 import shops.metro as metro
+import shops.lenta as lenta
 
 get_products = {
-    'Metro': metro.get_product
+    'Metro': metro.get_product,
+    'Lenta': lenta.get_product,
 }
 
 shop_urls = {}
 with open('shops.json', 'r', encoding='utf-8') as shops_json:
-        shop_urls = json.load(shops_json)
+    shop_urls = json.load(shops_json)
+
 
 def get_product(shop_name, search):
     shop_get_product = get_products.get(shop_name)
